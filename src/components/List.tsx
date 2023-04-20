@@ -8,7 +8,7 @@ import {
   getCelebrities,
   searchCelebrities,
   deleteCelebrity,
-} from "../redux/celebritySlice";
+} from "../redux/celebrity/celebritySlice";
 import { AppDispatch } from "../redux/store";
 import useDebounce from "../hooks/useDebounceInput";
 import DeleteModal from "./DeleteModal";

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import celebritySlice from "./celebritySlice";
+import celebritySlice from "./celebrity/celebritySlice";
 
 export const store = configureStore({
   reducer: {
