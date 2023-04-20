@@ -5,7 +5,7 @@ import List from './components/List';
 function App() {
   return (
     <>
-      <Box sx={{ width: '100%', display:'flex', alignItem : 'center', justifyContent: 'center' }}>
+      <Box sx={{ width: '100%', display:'flex', alignItem : 'center',      justifyContent: 'center' }}>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <List />
         </Grid>

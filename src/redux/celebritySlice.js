@@ -9,17 +9,24 @@ const initialState = {
 export const getCelebrities = createAsyncThunk(
   "celebrity/getCelebrity",
   async () => {
-    const { data } = await axios.get(`/celebrities`);
-    // const { data } = await axios.get(`http://localhost:3001/celebrities`);
-    return data;
+    try {
+      const { data } = await axios.get(`/celebrities`);
+      return data;
+    } catch (err) {
+      console.log(err);
+    }
   }
 );
 
 export const searchCelebrities = createAsyncThunk(
   "celebrity/searchCelebrity",
   async (searchtext: String) => {
-    const { data } = await axios.get(`/celebrities?q=${searchtext}`);
-    return data;
+    try {
+      const { data } = await axios.get(`/celebrities?q=${searchtext}`);
+      return data;
+    } catch (err) {
+      console.log(err);
+    }
   }
 );
 

@@ -13,23 +13,7 @@ import { AppDispatch } from "../redux/store";
 import useDebounce from "../hooks/useDebounceInput";
 import DeleteModal from "./DeleteModal";
 import { Typography } from "@mui/material";
-
-interface Celebrity {
-  _id: number;
-  first: string;
-  last: string;
-  dob: string;
-  gender: string;
-  email: string;
-  picture: string;
-  country: string;
-  description: string;
-  handleDeleteModalOpen:Function;
-  idSelected:number;
-  onAccordianSelect:Function
-  expanded: number | boolean;
-  setExpanded: (expanded: number | false) => void;
-}
+import Celebrity from "../type/interface";
 
 const List = () => {
   const dispatch = useDispatch<AppDispatch>();

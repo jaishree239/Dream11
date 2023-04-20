@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -15,25 +15,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import Select from "@mui/material/Select";
 import moment from "moment";
-import { text } from "stream/consumers";
-
-interface Celebrity {
-  _id: number;
-  first: string;
-  last: string;
-  dob: string;
-  // dob: number;
-  gender: string;
-  email: string;
-  picture: string;
-  country: string;
-  description: string;
-  handleDeleteModalOpen:Function;
-  idSelected:number;
-  onAccordianSelect:Function
-  expanded: number | boolean;
-  setExpanded: (expanded: number | false) => void;
-}
+import Celebrity from "../type/interface";
 
 const ListItem = ({
   _id,
@@ -70,20 +52,6 @@ const ListItem = ({
     }
   }, [firstName, countryData, descriptionData]);
 
-
-  // function handleClick(event: HTMLElementEvent<HTMLButtonElement>) {
-  //   const { target } = event
-  //   console.log(target.value);
-  // }
-  // function handleAgeChange (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-  //   console.log('birthYear', birthYear)
-    
-  //   setBirthYear(e.target.value)
-  // }
-
-  const handleCountryChange = (e : any) =>{
-    setCountryData(e.target.value)
-  }
   return (
     <Accordion style={{ fontSize: "30px", padding: "20px", marginTop: "30px" }} onClick={() => onAccordianSelect(_id)} expanded={_id === idSelected  }>
       <AccordionSummary
@@ -117,7 +85,6 @@ const ListItem = ({
                 value={moment().diff(birthYear, "years")}
                 onChange={(e) => setBirthYear(e.target.value)}
                 disabled
-                // disabled={!editing}
                 type="number"
                 required
               />
@@ -221,7 +188,6 @@ const ListItem = ({
                     size="large"
                     onClick={() => setEditing(true)}
                     disabled={moment().diff(birthYear, "years") < 18}
-                    // style ={{display: 'none'}}
                   >
                     <EditIcon fontSize="inherit" style={{ color: "blue" }} />
                   </IconButton>
